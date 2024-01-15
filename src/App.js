@@ -1,17 +1,16 @@
-import Content from "./components/Content/Content";
-import Footer from "./components/Footer";
-import Header from "./components/Header/Header";
 import { TodoProvider } from "./context/TodoContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import DarkModeBtn from "./components/DarkModeBtn";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
-    <TodoProvider>
-      <section className="todoapp">
-        <Header />
-        <Content />
-      </section>
-      <Footer />  
-    </TodoProvider>
+    <ThemeProvider>
+      <TodoProvider>
+        <DarkModeBtn />
+        <MainPage />
+      </TodoProvider>
+    </ThemeProvider>
   );
 }
 

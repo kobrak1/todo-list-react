@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
+  const [filter, setFilter] = useState('');
   const [todos, setTodos] = useState([
     {
       id: 2,
@@ -35,6 +36,13 @@ export const TodoProvider = ({ children }) => {
     setTodos(updatedTodos);
   };
 
+//   filter function
+const handleFilter = (data) => {
+    const clonedTodos = [...todos]
+    const filteredTodos = clonedTodos.filter((e) => e.target.value === data)
+    console.log(filteredTodos);
+}
+
   // shows how many items left
   const itemCount = todos.length;
 
@@ -46,6 +54,9 @@ export const TodoProvider = ({ children }) => {
     itemCount,
     handleChange,
     handleDelete,
+    handleFilter,
+    filter,
+    setFilter,
   };
 
   return (

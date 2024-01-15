@@ -421,3 +421,22 @@ meta,
 [property="todo"] .view:focus-within button {
 	display: none !important;
 }
+
+/* styling for darkMode button */
+
+.dark-mode-btn {
+	background-color: #f3e0e0;
+	color: #f3e0e0;
+	color: #aaa9a9;
+	padding: .5rem;
+	margin-top: 1rem;
+	border: 1px solid gray;
+	border-radius: 1rem;
+	width: 150px;
+	cursor: pointer;
+}
+
+.dark-mode-btn.dark {
+	background-color: #f1f1f1;
+	color: #bfa17a;
+}
