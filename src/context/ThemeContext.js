@@ -1,9 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(false);
+  const storedTheme = localStorage.getItem("Theme");
+  const [theme, setTheme] = useState(
+    storedTheme ? JSON.parse(storedTheme) : false
+  );
+
+  // set the theme data whenever theme changes
+  useEffect(() => {
+    localStorage.setItem("Theme", JSON.stringify(theme));
+  }, [theme]);
 
   // exported values
   const values = {
@@ -11,7 +19,7 @@ export const ThemeProvider = ({ children }) => {
     setTheme,
   };
 
-  console.log("Mode:",theme);
+  console.log("Mode:", theme);
 
   return (
     <ThemeContext.Provider value={values}> {children} </ThemeContext.Provider>
