@@ -1,27 +1,22 @@
 import { useTodo } from "../../context/TodoContext";
+import Item from "./Item";
 
 export default function TodoList() {
-  const { todos, handleDelete, handleChange } = useTodo();
+  const { todos, filter } = useTodo();
+  const filtered =
+    filter !== "all"
+      ? todos.filter((item) =>
+          filter === "active"
+            ? !item.completed
+            : item.completed
+        )
+      : todos;
 
+  console.log("Filtered:", filtered);
   return (
     <ul className="todo-list">
-      {todos.map((data) => (
-        <li className={data.completed ? "completed" : ""} key={data.id}>
-          <div className="view">
-            <input
-              property="done"
-              className="toggle"
-              type="checkbox"
-              checked={data.completed}
-              onChange={() => handleChange(data.id)}
-            />
-            <label property="text">{data.todo}</label>
-            <button
-              className="destroy"
-              onClick={() => handleDelete(data.id)}
-            ></button>
-          </div>
-        </li>
+      {filtered.map((data) => (
+        <Item data={data} key={data.id} />
       ))}
     </ul>
   );

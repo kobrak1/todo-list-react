@@ -2,14 +2,13 @@ import React from "react";
 import { useTodo } from "../context/TodoContext";
 
 const ContentFooter = () => {
-  const { itemCount, filter, setFilter } = useTodo();
+  const { itemCount, filter, setFilter, todos, setTodos } = useTodo();
   return (
     <footer className="footer">
       <meta property="todo_done" content="[count(todo where done)]" />
       <meta property="todo_left" content="[count(todo where !done)]" />
 
       <span className="todo-count">
-        {" "}
         <b>{itemCount}</b> item{itemCount > 1 && "s"} left
       </span>
 
@@ -44,7 +43,7 @@ const ContentFooter = () => {
         </li>
       </ul>
 
-      <button hidden="[todo_done = 0]" className="clear-completed">
+      <button className="clear-completed" onClick={() => setTodos(todos.filter((item) => !item.completed))}>
         Clear completed
       </button>
     </footer>
