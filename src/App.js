@@ -1,16 +1,17 @@
-import Content from "./components/Content";
+import Content from "./components/Content/Content";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
+import { TodoProvider } from "./context/TodoContext";
 
 function App() {
   return (
-    <>
+    <TodoProvider>
       <section className="todoapp">
         <Header />
         <Content />
       </section>
-      <Footer />
-    </>
+      <Footer />  
+    </TodoProvider>
   );
 }
 
