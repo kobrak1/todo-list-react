@@ -11,6 +11,7 @@ const Footer = () => {
         <a
           href="https://www.linkedin.com/in/ahmet-burak-karhan-972911153/"
           target="_blank"
+          title="linkedin.com"
           rel="noopener noreferrer"
           style={{ color: theme ? '#bfa17a' : "#e0c5c5" }}
         >
@@ -23,6 +24,7 @@ const Footer = () => {
           href="https://github.com/kobrak1"
           target="_blank"
           rel="noopener noreferrer"
+          title="github.com"
           style={{ color: theme ? '#bfa17a' : "#e0c5c5" }}
         >
           GitHub

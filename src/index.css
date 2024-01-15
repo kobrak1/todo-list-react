@@ -316,7 +316,7 @@ body {
 }
 
 .filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
+	border-color: rgba(64, 205, 198, 0.3);
 }
 
 .clear-completed,
@@ -426,7 +426,7 @@ meta,
 
 .dark-mode-btn {
 	background-color: #f3e0e0;
-	color: #f3e0e0;
+	color: #e0c5c5;
 	color: #aaa9a9;
 	padding: .5rem;
 	margin-top: 1rem;

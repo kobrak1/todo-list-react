@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
     setTheme,
   };
 
-  console.log(theme);
+  console.log("Mode:",theme);
 
   return (
     <ThemeContext.Provider value={values}> {children} </ThemeContext.Provider>
