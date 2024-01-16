@@ -11,6 +11,7 @@ A simple Todo List app built with React, using libraries such as uuid, Yup, Form
 - Add, edit, and delete tasks.
 - Dark mode for better user experience in low-light environments.
 - Data persistence using local storage.
+- Responsive design ensuring optimal user experience across various screen sizes, including mobile devices.
 
 ## Libraries Used
 
