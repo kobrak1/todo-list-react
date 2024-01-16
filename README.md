@@ -28,3 +28,19 @@ A simple Todo List app built with React, using libraries such as uuid, Yup, Form
 
    ```bash
    git clone https://github.com/your-username/react-todo-list.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd react-todo-list
+
+3. Install dependencies:
+   ```bash
+   npm install
+
+4. Run the app locally:
+   ```bash
+   npm start
+The app will be accessible at http://localhost:3000 in your web browser.
+
+This project is licensed under the (MIT License)[].
+
