@@ -42,5 +42,5 @@ A simple Todo List app built with React, using libraries such as uuid, Yup, Form
    npm start
 The app will be accessible at http://localhost:3000 in your web browser.
 
-This project is licensed under the (MIT License)[https://github.com/kobrak1/todo-list-react/blob/main/LICENSE].
+This project is licensed under the [MIT License](https://github.com/kobrak1/todo-list-react/blob/main/LICENSE).
 
