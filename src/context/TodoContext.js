@@ -1,17 +1,18 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
+  const storedTodos = localStorage.getItem('todo');
   const [filter, setFilter] = useState('all');
-  const [todos, setTodos] = useState([
-    {
-      id: 2,
-      todo: "asdasd",
-      completed: false,
-    },
-  ]);
+  const [todos, setTodos] = useState( storedTodos ? JSON.parse(storedTodos) : []);
+
+  console.log(storedTodos);
+  // set the todo data whenever a todo changed
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todos))
+  }, [todos])
 
   // addTodo function to add new items
   const addTodo = (text) => {
