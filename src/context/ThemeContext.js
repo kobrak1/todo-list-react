@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }) => {
     setTheme,
   };
 
-  console.log("Mode:", theme);
+  console.log("isDarkMode:", theme);
 
   return (
     <ThemeContext.Provider value={values}> {children} </ThemeContext.Provider>
