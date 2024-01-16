@@ -221,7 +221,8 @@ body {
 }
 
 .todo-list li .destroy {
-  display: none;
+  display: block;
+  opacity: .5;
   position: absolute;
   top: 0;
   right: 10px;
@@ -237,6 +238,7 @@ body {
 
 .todo-list li .destroy:hover {
   color: #af5b5e;
+  opacity: 1;
 }
 
 .todo-list li .destroy:after {
